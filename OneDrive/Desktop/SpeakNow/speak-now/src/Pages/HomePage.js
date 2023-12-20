@@ -6,7 +6,7 @@ const HomePage = () => {
     <div>
       <NavBar/>
       <h1 className="display-1">Speak Now</h1>
-      <Button message={"Explore"}></Button>
+      <Button message={"Explore"} link={"explore"}></Button>
     </div>
   )
 }
