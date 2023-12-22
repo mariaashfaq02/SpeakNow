@@ -1,7 +1,7 @@
 import React from 'react'
-import NavBar from '../Components/NavBar'
-import { FeaturesData } from '../Components/FeaturesData'
-import Button from '../Components/Button'
+import NavBar from '../../Components/NavBar'
+import { FeaturesData } from '../../Components/FeaturesData'
+import Button from '../../Components/Button'
 const Features = () => {
   const features=FeaturesData.map(data => {
     return(

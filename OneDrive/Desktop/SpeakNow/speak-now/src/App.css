@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Arnel';
+    src: local('Arnel'),
+         url('./fonts/ArnelDemoRegular-1GdXB.otf'),
+         url('./fonts/ArnelVintageDemoStamp-jEp10.otf');
+}
+

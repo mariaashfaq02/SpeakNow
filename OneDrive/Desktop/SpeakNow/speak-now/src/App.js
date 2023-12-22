@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
+import HomePage from './Pages/Home Page/HomePage';
 import React from "react";
-import About from './Pages/About';
-import Features from './Pages/Features';
-import Team from './Pages/Team';
-import Contact from './Pages/Contact';
+import About from './Pages/About Page/About';
+import Features from './Pages/Features Page/Features';
+import Team from './Pages/Team Page/Team';
+import Contact from './Pages/Contact Page/Contact';
 
 function App() {
   return (

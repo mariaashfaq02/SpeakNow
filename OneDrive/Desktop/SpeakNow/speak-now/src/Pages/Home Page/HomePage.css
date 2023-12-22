@@ -1,0 +1,24 @@
+.homePageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4.5rem;
+}
+.homePageHeading{
+    font-family: Arnel;
+    text-transform: uppercase ;
+    font-size: 300px !important;
+    color: #000;
+    opacity: 72%;
+}
+.btn-lg{
+    font-family: Montserrat !important;
+    font-style: italic;
+    color: #a772ea !important;
+    size: 50px ;
+    text-transform: uppercase ;
+    opacity: 100% ;
+    border: none !important;
+    text-decoration: none !important;
+}

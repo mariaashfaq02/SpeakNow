@@ -1,7 +1,7 @@
 import React from 'react'
-import NavBar from '../Components/NavBar'
-import Accordion from '../Components/Accordion/Accordion'
-import ContactForm from '../Components/ContactForm'
+import NavBar from '../../Components/NavBar'
+import Accordion from '../../Components/Accordion/Accordion'
+import ContactForm from '../../Components/ContactForm'
 
 const Contact = () => {
   return (

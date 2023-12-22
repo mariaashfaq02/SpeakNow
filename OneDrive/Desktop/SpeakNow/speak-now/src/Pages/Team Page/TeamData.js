@@ -1,8 +1,9 @@
-import fawad from '../Assets/Fawad.png'
-import sarim from '../Assets/Sarim.png'
-import sara from '../Assets/Sara.png'
-import afra from '../Assets/Afra.png'
-import maria from '../Assets/Maria.png'
+import fawad from '../../Assets/Fawad.png'
+import sarim from '../../Assets/Sarim.png'
+import sara from '../../Assets/Sara.png'
+import afra from '../../Assets/Afra.png'
+import maria from '../../Assets/Maria.png'
+
 export const pictures = [
    {
     image:fawad,
