@@ -8,7 +8,7 @@ const HomePage = () => {
       <NavBar/>
       <div className="container-fluid homePageContainer">
       <h1 className="display-1 homePageHeading">Speak Now</h1>
-      <Button message={"Explore"} link={"explore"} ></Button>
+      <Button message={"Explore"} link={"features"} ></Button>
       </div>
     </div>
   )

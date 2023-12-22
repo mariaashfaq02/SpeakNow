@@ -28,7 +28,9 @@
 .aboutDataPara{
     font-family: Montserrat;
     font-size: 28px !important;
-    font-weight: 500 !important;
+    font-weight:normal !important;
     letter-spacing: 0em !important;
     text-align: center !important;
+    opacity: 100% !important;
+    color: #1e1e1e !important;
 }
