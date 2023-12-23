@@ -6,10 +6,11 @@ const Accordion = () => {
 
     const faq=AccordionData.map(data=>{
         return(
-            <div className="accordion accordion-flush" id="accordionFlushExample">
-                <div className="accordion-item" id={data.id}>
-                    <h2 className="accordion-header">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse${data.id}`} aria-expanded="false" aria-controls={`flush-collapse${data.id}`}>
+
+            <div className="accordion accordion-flush faqMain" id="accordionFlushExample">
+                <div className={`accordion-item faq${data.id}`} id={data.id}>
+                    <h2 className="accordion-header accordionQuestion">
+                        <button className="accordion-button collapsed accordionQuestion" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse${data.id}`} aria-expanded="false" aria-controls={`flush-collapse${data.id}`}>
                             {data.heading}
                         </button>
                     </h2>
