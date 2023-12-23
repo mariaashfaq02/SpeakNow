@@ -1,0 +1,35 @@
+.teamHeading{
+    font-family: Arnel;
+    text-transform: uppercase;
+    font-size: 5rem !important;
+    text-align: center;
+    color: #1e1e1e !important;
+    opacity: 100% !important;
+}
+
+.teamCardsContainer{
+    display: flex;
+}
+
+
+.teamCard{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamMemberPic{
+    height: 80% !important;
+    width: fit-content;
+}
+
+.teamMemberName{
+    font-family: Montserrat;
+    font-weight:800 !important;
+    font-size: 2rem !important;
+    text-transform: uppercase;
+    margin-top: 1rem !important;
+    color: #a772ea !important;
+}
