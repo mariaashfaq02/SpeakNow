@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../../Components/NavBar'
 import Accordion from '../../Components/Accordion/Accordion'
-import ContactForm from '../../Components/ContactForm'
+import ContactForm from '../../Components/Form/ContactForm'
 import './Contact.css'
 
 const Contact = () => {
@@ -23,7 +23,7 @@ const Contact = () => {
 
         </div>
 
-        <div className="container-fluid contactPageSubContainer">
+        <div className="container-fluid contactPageSubContainerForm">
           <div className="container-fluid contactForm">
             <ContactForm/>
           </div>
