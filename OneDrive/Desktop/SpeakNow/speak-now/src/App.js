@@ -7,6 +7,7 @@ import Features from './Pages/Features Page/Features';
 import Team from './Pages/Team Page/Team';
 import Contact from './Pages/Contact Page/Contact';
 
+
 function App() {
   return (
     <div className="container-fluid">
@@ -19,6 +20,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
         </Routes>
       </Router>
+      
     </div>
   );
 }

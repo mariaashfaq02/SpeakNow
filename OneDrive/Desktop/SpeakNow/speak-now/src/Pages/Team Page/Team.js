@@ -1,6 +1,7 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar'
+import NavBar from '../../Components/NavBar/NavBar'
 import { pictures } from './TeamData'
+import Footer from '../../Components/Footer/Footer'
 import './Team.css'
 
 const Team = () => {
@@ -24,7 +25,8 @@ const Team = () => {
 
       <div className="container-fluid teamCardsContainer">
       {teamMembers}
-      </div>      
+      </div>   
+      <Footer/>   
     </div>
   )
 }

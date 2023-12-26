@@ -1,8 +1,9 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar'
-import { FeaturesData } from '../../Components/FeaturesData'
-import Button from '../../Components/Button'
+import NavBar from '../../Components/NavBar/NavBar'
+import { FeaturesData } from './FeaturesData'
+import Button from '../../Components/Button/Button'
 import './Features.css'
+import Footer from '../../Components/Footer/Footer'
 
 const Features = () => {
   const features=FeaturesData.map(data => {
@@ -31,7 +32,7 @@ const Features = () => {
           <div className="container-fluid featureButton"><Button message={"Upload Video"} link={"record"}></Button></div>
         </div>
       </div>
-
+      <Footer/>
     </div>
   )
 }

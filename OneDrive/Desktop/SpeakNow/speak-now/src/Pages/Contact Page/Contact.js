@@ -1,7 +1,8 @@
 import React from 'react'
-import NavBar from '../../Components/NavBar'
+import NavBar from '../../Components/NavBar/NavBar'
 import Accordion from '../../Components/Accordion/Accordion'
 import ContactForm from '../../Components/Form/ContactForm'
+import Footer from '../../Components/Footer/Footer'
 import './Contact.css'
 
 const Contact = () => {
@@ -31,6 +32,7 @@ const Contact = () => {
         
       </div>
 
+      <Footer/>
     </div>
   
   )
