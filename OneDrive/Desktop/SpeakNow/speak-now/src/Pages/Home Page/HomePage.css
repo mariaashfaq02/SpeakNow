@@ -12,13 +12,26 @@
     color: #000;
     opacity: 72%;
 }
-.btn-lg{
-    font-family: Montserrat !important;
-    font-style: italic;
-    color: #a772ea !important;
-    size: 50px ;
-    text-transform: uppercase ;
-    opacity: 100% ;
-    border: none !important;
-    text-decoration: none !important;
+
+.homePageButton{
+    background-color: transparent !important;
+    border-radius:0px !important;
+    padding: 0rem !important;
+}
+
+.HomebuttonText{
+    font-size: 1.75rem !important;
+    color: #a772ea  !important;
+    font-family: 'Montserrat' !important;
+    text-transform: uppercase !important;
+    text-decoration: none;
+    opacity: 100% !important;
+    background-color: transparent !important;
+    font-weight: 300 !important;
+    font-style: italic;  
+}
+
+.HomebuttonText:hover {
+    color: #000  !important;
+    text-decoration: underline !important;
 }

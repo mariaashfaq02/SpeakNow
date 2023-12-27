@@ -1,8 +1,24 @@
+.btn-lg{
+    font-family: Montserrat !important;
+    font-style: italic;
+    color: #a772ea !important;
+    size: 50px ;
+    text-transform: uppercase ;
+    opacity: 100% ;
+    border: none !important;
+    text-decoration: none !important;
+}
+
 .button{
     background-color: #A772EA !important;
     border-radius: 21px !important;
     padding: 0.5rem 1.5rem !important;
 }
+.button:hover{
+    background-color: transparent !important;
+    border: solid 2px #A772EA ;
+}
+
 .buttonText{
     font-size: 1.75rem !important;
     color: #1e1e1e !important;
@@ -13,3 +29,8 @@
     font-weight: bolder !important;
     font-style: normal;
 }
+
+.buttonText:hover{
+    background-color: transparent !important;
+}
+

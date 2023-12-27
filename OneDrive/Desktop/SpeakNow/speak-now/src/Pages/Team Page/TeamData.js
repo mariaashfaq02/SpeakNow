@@ -7,7 +7,7 @@ import maria from '../../Assets/Maria.png'
 export const pictures = [
    {
     image:fawad,
-    name: "Fawad"
+    name:"Fawad"
    },
    {
     image:sarim,

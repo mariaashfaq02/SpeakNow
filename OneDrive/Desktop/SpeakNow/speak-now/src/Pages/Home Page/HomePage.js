@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../Components/Button/Button'
+import {Link} from 'react-router-dom'
 import NavBar from '../../Components/NavBar/NavBar'
 import Footer from '../../Components/Footer/Footer'
 import './HomePage.css'
@@ -9,7 +9,7 @@ const HomePage = () => {
       <NavBar/>
       <div className="container-fluid homePageContainer">
       <h1 className="display-1 homePageHeading">Speak Now</h1>
-      <Button message={"Explore"} link={"features"} ></Button>
+      <button className='btn btn-info btn-lg homePageButton' ><Link to="/features" className='HomebuttonText'>Explore</Link></button>
       </div>
       <Footer/>
     </div>

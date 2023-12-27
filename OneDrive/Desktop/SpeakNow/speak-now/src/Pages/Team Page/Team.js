@@ -9,8 +9,14 @@ const Team = () => {
   const teamMembers=pictures.map(data=>{
     return(
       <div className="container-fluid teamCard">
-        <img  src={data.image} className="img-fluid teamMemberPic" alt={data.name} />
-        <p className='h6 teamMemberName'>{data.name}</p>
+
+        <div className="container-fluid imageContainer">
+          <img  src={data.image} className="img-fluid teamMemberPic" alt={data.name} />
+          <div className="container-fluid textOverlay">
+            <p className='h6 teamMemberName'>{data.name}</p>
+          </div>
+        </div>
+        
       </div>
     )
   })
