@@ -80,8 +80,8 @@ const ContactForm = () => {
         </div>
         
         <div class="mb-3 formSubContainer">
-            <label for="exampleInputMessage1" class="form-label" value= {form.message} onChange={handleChange}>Message</label>
-            <input name='message' type="text" className="form-control" id="exampleInputMessage1"/>
+            <label for="exampleInputMessage1" class="form-label"  >Message</label>
+            <input name='message' type="text" className="form-control" id="exampleInputMessage1" value = {form.message} onChange={handleChange}/>
         </div>
         
         <div class="mb-3 formSubContainerButton">

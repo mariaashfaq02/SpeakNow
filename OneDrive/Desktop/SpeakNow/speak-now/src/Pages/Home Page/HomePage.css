@@ -17,6 +17,7 @@
     background-color: transparent !important;
     border-radius:0px !important;
     padding: 0rem !important;
+    margin-bottom: 6%;
 }
 
 .HomebuttonText{
@@ -35,3 +36,4 @@
     color: #000  !important;
     text-decoration: underline !important;
 }
+

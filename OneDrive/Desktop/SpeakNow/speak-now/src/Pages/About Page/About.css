@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center !important;
     align-items: center !important;
+    margin-bottom: 4%;
 }
 
 .aboutHeading{

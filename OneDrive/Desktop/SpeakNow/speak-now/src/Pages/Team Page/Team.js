@@ -31,7 +31,8 @@ const Team = () => {
 
       <div className="container-fluid teamCardsContainer">
       {teamMembers}
-      </div>   
+      </div> 
+        
       <Footer/>   
     </div>
   )
