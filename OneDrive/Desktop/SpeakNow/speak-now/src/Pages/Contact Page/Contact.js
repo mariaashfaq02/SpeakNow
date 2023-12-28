@@ -5,7 +5,9 @@ import ContactForm from '../../Components/Form/ContactForm'
 import Footer from '../../Components/Footer/Footer'
 import './Contact.css'
 
+
 const Contact = () => {
+  
   return (
     <div className='container-fluid contactPageContainer'>
       <NavBar/>
