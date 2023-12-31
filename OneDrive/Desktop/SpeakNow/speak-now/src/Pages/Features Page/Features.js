@@ -29,7 +29,7 @@ const Features = () => {
         
         <div className="container-fluid featuresPageButtons">
           <div className="container-fluid featureButton"> <Button message={"Start Recording"} link={"record"}></Button></div>
-          <div className="container-fluid featureButton"><Button message={"Upload Video"} link={"record"}></Button></div>
+          <div className="container-fluid featureButton"><Button message={"Upload Video"} link={"upload"}></Button></div>
         </div>
       </div>
       <Footer/>

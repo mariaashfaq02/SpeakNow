@@ -8,6 +8,7 @@ import Team from './Pages/Team Page/Team';
 import Contact from './Pages/Contact Page/Contact';
 import ErrorPage from './Pages/Error Page/ErrorPage';
 import Record from './Pages/Record Page/Record';
+import Uploader from './Components/Uploader/Uploader';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/error' element={<ErrorPage/>}/>
           <Route path='/record' element={<Record/>}/>
+          <Route path='/upload' element={<Uploader/>}/>
         </Routes>
       </Router>
       
