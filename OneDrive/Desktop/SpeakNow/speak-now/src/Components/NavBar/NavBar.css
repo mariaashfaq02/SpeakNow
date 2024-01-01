@@ -3,7 +3,7 @@
 }
 .navbar-brand{
     font-family: Montserrat;
-    color: #FFF1E1 !important;
+    color: #BD88FF !important;
     opacity: 100%;
     text-transform: uppercase;
 }
@@ -20,9 +20,8 @@
     position: absolute !important;
     top: 50% !important;
     left: -3% !important;
-    background: #FFF1E1 ;
+    background: #BD88FF ;
 }
-
 
 
 .navSubSub::after{
