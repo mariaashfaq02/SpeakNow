@@ -9,6 +9,8 @@ import Contact from './Pages/Contact Page/Contact';
 import ErrorPage from './Pages/Error Page/ErrorPage';
 import Record from './Pages/Record Page/Record';
 import Uploader from './Components/Uploader/Uploader';
+import Feedback from './Pages/Feedback Page/Feedback';
+import ReadMore from './Components/Read More/ReadMore';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path='/error' element={<ErrorPage/>}/>
           <Route path='/record' element={<Record/>}/>
           <Route path='/upload' element={<Uploader/>}/>
+          <Route path='/feedback' element={<Feedback/>}/>
+          <Route path='/readmore' element={<ReadMore/>}/>
         </Routes>
       </Router>
       

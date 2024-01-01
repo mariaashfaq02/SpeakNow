@@ -11,6 +11,7 @@
     flex: 1 1;
     border-bottom: 1px solid;
     margin: auto;
+    color:  #FFF1E1;
 }
 
 .footerLines:before {
@@ -25,7 +26,7 @@
 .footerLink{
     text-transform: uppercase;
     font-family: Montserrat;
-    color: #000;
+    color:  #FFF1E1;
     text-decoration: none;
     font-size: 1.5rem;
 }
