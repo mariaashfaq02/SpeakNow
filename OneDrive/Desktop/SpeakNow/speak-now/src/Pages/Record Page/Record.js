@@ -1,149 +1,103 @@
-import React from 'react'
-import { useRecordWebcam } from 'react-record-webcam'
-import { useState } from 'react'
-import './Record.css'
+import React,{useState,useRef,useEffect} from 'react'
+{/*import CameraComponent from './CameraComponent';
+import RecordComponent from './RecordComponent';
+
+const Record = () => {
+  const [cameraStream, setCameraStream] = useState(null);
+  return (
+    <div>
+      <CameraComponent onStreamChange={setCameraStream} />
+      {cameraStream && <RecordComponent />}
+    </div>
+  )
+}
+
+export default Record*/}
 
 
 const Record = () => {
-    const {
-        activeRecordings,
-        cancelRecording,
-        clearPreview,
-        //closeCamera,
-        createRecording,
-        devicesByType,
-        devicesById,
-        download,
-        muteRecording,
-        openCamera,
-        pauseRecording,
-        resumeRecording,
-        startRecording,
-        stopRecording,
-    } = useRecordWebcam();
+  const videoRef = useRef(null);
+  const mediaRecorderRef = useRef(null);
+  const recordedChunksRef = useRef([]);
 
-    const [videoDeviceId, setVideoDeviceId] = useState("");
-    const [audioDeviceId, setAudioDeviceId] = useState("");
 
-    const handleSelect = async (event) => {
-        const { deviceid: deviceId } =
-          event.target.options[event.target.selectedIndex].dataset;
-        if (devicesById[deviceId].type === "videoinput") {
-          setVideoDeviceId(deviceId);
+  const [isRecording, setIsRecording] = useState(false);
+
+  const getVideo = () => {
+    navigator.mediaDevices
+      .getUserMedia({ video: { width: 1920, height: 1080 },audio:true })
+      .then((stream) => {
+        let video = videoRef.current;
+        if ('srcObject' in video) {
+          video.srcObject = stream;
+        } else {
+          // For older browsers that don't support srcObject
+          video.src = window.URL.createObjectURL(stream);
         }
-        if (devicesById[deviceId].type === "audioinput") {
-          setAudioDeviceId(deviceId);
-        }
-      };
-      const start = async () => {
-        const recording = await createRecording(videoDeviceId, audioDeviceId);
-        if (recording) await openCamera(recording.id);
-      };
-    return (
-      
-    <div className='container-fluid mainContainer'>
+        video.play().catch((err) => {
+          console.error('Error playing video:', err);
+        });
 
-      <div className="input">
+        // Initialize the MediaRecorder for video recording
+        mediaRecorderRef.current = new MediaRecorder(stream);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
-        <div className='container-fluid'>
-          <h4>Select video input</h4>
-          <select className="input-select" onChange={handleSelect}>
-            {devicesByType?.video?.map((device) => (
-              <option key={device.deviceId} data-deviceid={device.deviceId}>
-                {device.label}
-              </option>
-            ))}
-          </select>
-        </div>
+  const handleDataAvailable = (event) => {
+    if (event.data && event.data.size > 0) {
+      recordedChunksRef.current.push(event.data);
+    }
+  };
 
-        <div className='container-fluid'>
-          <h4>Select audio input</h4>
-          <select className="input-select" onChange={handleSelect}>
-            {devicesByType?.audio?.map((device) => (
-              <option key={device.deviceId} data-deviceid={device.deviceId}>
-                {device.label}
-              </option>
-            ))}
-          </select>
-        </div>
+  const startRecording = () => {
+    setIsRecording(true);
 
+    // Reset the recordedChunks array
+    recordedChunksRef.current = [];
+
+    mediaRecorderRef.current.ondataavailable = handleDataAvailable;
+
+
+    mediaRecorderRef.current.start();
+  };
+
+  const stopRecording = () => {
+        mediaRecorderRef.current.onstop = () => {
+      const blob = new Blob(recordedChunksRef.current, { type: 'video/webm' });
+
+      // Create a download link for the recorded video
+      const downloadLink = document.createElement('a');
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = 'recorded-video.webm';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+
+      setIsRecording(false);
+    };
+    mediaRecorderRef.current.stop();
+  };
+
+  useEffect(() => {
+    getVideo();
+  }, [videoRef]);
+
+  return (
+    <div className='container-fluid'>
+
+      <div className='camera'>
+        <video ref={videoRef}></video>
+        {isRecording ? (
+          <button onClick={stopRecording}>Stop Recording</button>
+        ) : (
+          <button onClick={startRecording}>Start Recording</button>
+        )}
       </div>
-
-      
-      <div className="input-start">
-        <button onClick={start}>Open camera</button>
-      </div>
-      
-      <div className="devices">
-        {activeRecordings?.map((recording) => (
-          
-
-          <div className="device" key={recording.id}>
-            <p>Live</p>
-            <div className="device-list">
-              <small>Status: {recording.status}</small>
-              <small>Video: {recording.videoLabel}</small>
-              <small>Audio: {recording.audioLabel}</small>
-            </div>
-            <div className="container-fluid videosContainer">
-            <video ref={recording.webcamRef} loop autoPlay playsInline />
-            <div className="controls">
-              <button
-                disabled={
-                  recording.status === "RECORDING" ||
-                  recording.status === "PAUSED"
-                }
-                onClick={() => startRecording(recording.id)}
-              >
-                Record
-              </button>
-              <button
-                disabled={
-                  recording.status !== "RECORDING" &&
-                  recording.status !== "PAUSED"
-                }
-                onClick={() =>
-                  recording.status === "PAUSED"
-                    ? resumeRecording(recording.id)
-                    : pauseRecording(recording.id)
-                }
-              >
-                {recording.status === "PAUSED" ? "Resume" : "Pause"}
-              </button>
-              <button
-                className={recording.isMuted ? "selected" : ""}
-                onClick={() => muteRecording(recording.id)}
-              >
-                Mute
-              </button>
-              <button
-                disabled={recording.status !== "RECORDING"}
-                onClick={() => stopRecording(recording.id)}
-              >
-                Stop
-              </button>
-              <button onClick={() => cancelRecording(recording.id)}>
-                Cancel
-              </button>
-            </div>
-
-            <div className="container-fluid preview">
-              <p>Preview</p>
-              <video ref={recording.previewRef} autoPlay loop playsInline />
-              <div className="controls">
-                <button onClick={() => download(recording.id)}>Download</button>
-                <button onClick={() => clearPreview(recording.id)}>
-                  Clear preview
-                </button>
-              </div>
-            </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      
     </div>
-    )
-}
+  );
+};
 
-export default Record
+export default Record;
