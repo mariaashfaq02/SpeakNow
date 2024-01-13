@@ -3,9 +3,25 @@ import PieChart from '../../Components/PieChart/PieChart'
 import FeedbackHalf from '../../Components/Read More/FeedbackHalf'
 import Button from '../../Components/Button/Button'
 import Card from '../../Components/Card/Card'
+import ReadMore from '../../Components/Read More/ReadMore'
+import { renderToStaticMarkup } from 'react-dom/server'
 import './Feedback.css'
 
+
 const Feedback = () => {
+  const downloadReport = () => {
+    try {
+      const myOtherComponentHtml = renderToStaticMarkup(<ReadMore />);
+      
+      const blob = new Blob([myOtherComponentHtml], { type: 'text/pdf' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = 'downloaded_page.html';
+      link.click();
+    } catch (error) {
+      console.error('Error downloading report:', error);
+    }
+  };
   return (
     <div>
       <h1 className='display-1 featuresPageHeading'>Great...Your Detailed Report is Here</h1>
@@ -18,7 +34,7 @@ const Feedback = () => {
         <div className="container-fluid"><Card body={"NERVOUSNESS"} percent={"20"}/></div>
         </div>
         <div className="container-fluid reportFeedback"> <FeedbackHalf/></div>
-        <div className="container-fluid buttonReport"><Button message={"Download Report"}/></div>
+        <div className="container-fluid buttonReport"><Button message={"Download Report"} onClick={downloadReport}/></div>
         
       </div>
       

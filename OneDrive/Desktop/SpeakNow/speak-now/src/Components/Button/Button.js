@@ -4,7 +4,7 @@ import './Button.css'
 
 const Button = (props) => {
   return (
-    <button className='btn btn-info btn-lg button' >
+    <button className='btn btn-info btn-lg button' onClick={props.onClick}>
     <Link to={`/${props.link}`} className='buttonText'>{props.message}</Link>
     </button>
   )
