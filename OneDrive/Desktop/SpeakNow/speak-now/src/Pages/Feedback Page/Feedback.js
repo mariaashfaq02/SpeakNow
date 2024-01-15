@@ -1,9 +1,9 @@
 import React from 'react'
 import PieChart from '../../Components/PieChart/PieChart'
-import FeedbackHalf from '../../Components/Read More/FeedbackHalf'
+import FeedbackHalfConfident from '../../Components/Read More/FeedbackHalfConfident'
 import Button from '../../Components/Button/Button'
 import Card from '../../Components/Card/Card'
-import ReadMore from '../../Components/Read More/ReadMore'
+import ReadMoreConfident from '../../Components/Read More/ReadMoreConfident'
 import { renderToStaticMarkup } from 'react-dom/server'
 import './Feedback.css'
 
@@ -11,7 +11,7 @@ import './Feedback.css'
 const Feedback = () => {
   const downloadReport = () => {
     try {
-      const myOtherComponentHtml = renderToStaticMarkup(<ReadMore />);
+      const myOtherComponentHtml = renderToStaticMarkup(<ReadMoreConfident />);
       
       const blob = new Blob([myOtherComponentHtml], { type: 'text/pdf' });
       const link = document.createElement('a');
@@ -33,7 +33,7 @@ const Feedback = () => {
         <div className="container-fluid"><Card body={"CONFIDENCE"} percent={"80"}/></div>
         <div className="container-fluid"><Card body={"NERVOUSNESS"} percent={"20"}/></div>
         </div>
-        <div className="container-fluid reportFeedback"> <FeedbackHalf/></div>
+        <div className="container-fluid reportFeedback"> <FeedbackHalfConfident/></div>
         <div className="container-fluid buttonReport"><Button message={"Download Report"} onClick={downloadReport}/></div>
         
       </div>

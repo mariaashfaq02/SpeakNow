@@ -1,10 +1,10 @@
 import React from 'react'
-import { ReadMoreData } from './ReadMoreData'
+import { ReadMoreConfidentData } from './ReadMoreData'
 import {Link} from 'react-router-dom'
 import './FeedbackHalf.css'
 
-const FeedbackHalf = () => {
-    const feedbackHalf=ReadMoreData.map(data=>{
+const FeedbackHalfConfident = () => {
+    const feedbackHalf=ReadMoreConfidentData.map(data=>{
       if(data.id==='1'){
         return(
         <div className={`container-fluid`}> 
@@ -33,9 +33,9 @@ const FeedbackHalf = () => {
   return (
     <div className='container-fluid'>
       {feedbackHalf}
-      <button className='read-more'><Link to={'/readmore'} className='read-more'>Read More</Link></button>
+      <button className='read-more'><Link to={'/readmore-confident'} className='read-more'>Read More</Link></button>
     </div>
   )
 }
 
-export default FeedbackHalf
+export default FeedbackHalfConfident

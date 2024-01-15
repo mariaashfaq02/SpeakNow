@@ -1,11 +1,11 @@
 import React from 'react'
-import { ReadMoreData } from './ReadMoreData'
+import { ReadMoreConfidentData } from './ReadMoreData'
 import './ReadMore.css'
 
 
 
-const ReadMore = () => {
-    const feedback=ReadMoreData.map(data=>{
+const ReadMoreConfident = () => {
+    const feedback=ReadMoreConfidentData.map(data=>{
       if(data.id==="3"||data.id==='4'){
         return(
           <div className={`container-fluid `}>
@@ -54,4 +54,4 @@ const ReadMore = () => {
   )
 }
 
-export default ReadMore
+export default ReadMoreConfident
